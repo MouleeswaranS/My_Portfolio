@@ -1,0 +1,26 @@
+[
+  {
+    "Img": "/assets/AR_page-0001.jpg",
+    "title": "AR Certificate"
+  },
+  {
+    "Img": "/assets/blockchain_page-0001.jpg",
+    "title": "Blockchain Certificate"
+  },
+  {
+    "Img": "/assets/cybersecurity_page-0001.jpg",
+    "title": "Cybersecurity Certificate"
+  },
+  {
+    "Img": "/assets/Fullstack _page-0001.jpg",
+    "title": "Fullstack Certificate"
+  },
+  {
+    "Img": "/assets/dataScience.jpg",
+    "title": "Data Science Certificate"
+  },
+  {
+    "Img": "/assets/Mindluster_Certificate_page-0001.jpg",
+    "title": "Mindluster Certificate"
+  }
+]
