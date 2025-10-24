@@ -73,11 +73,12 @@ const ProfileImage = memo(() => (
 ));
 
 const StatCard = memo(
-  ({ icon: Icon, color, value, label, description, animation }) => (
+  ({ icon: Icon, color, value, label, description, animation, onClick }) => (
     <div
       data-aos={animation}
       data-aos-duration={1300}
-      className="relative group"
+      className="relative group cursor-pointer"
+      onClick={onClick}
     >
       <div className="relative z-10 bg-gray-900/50 backdrop-blur-lg rounded-2xl p-6 border border-white/10 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col justify-between">
         <div
@@ -172,6 +173,19 @@ const AboutPage = () => {
         label: "Total Projects",
         description: "Innovative web solutions crafted",
         animation: "fade-right",
+        onClick: () => {
+          const portfolioSection = document.getElementById('Portofolio');
+          if (portfolioSection) {
+            portfolioSection.scrollIntoView({ behavior: 'smooth' });
+            // Wait for scroll to complete, then switch to projects tab
+            setTimeout(() => {
+              const projectsTab = document.querySelector('[value="0"]');
+              if (projectsTab) {
+                projectsTab.click();
+              }
+            }, 500);
+          }
+        },
       },
       {
         icon: Award,
@@ -180,6 +194,19 @@ const AboutPage = () => {
         label: "Certificates",
         description: "Professional skills validated",
         animation: "fade-up",
+        onClick: () => {
+          const portfolioSection = document.getElementById('Portofolio');
+          if (portfolioSection) {
+            portfolioSection.scrollIntoView({ behavior: 'smooth' });
+            // Wait for scroll to complete, then switch to certificates tab
+            setTimeout(() => {
+              const certificatesTab = document.querySelector('[value="1"]');
+              if (certificatesTab) {
+                certificatesTab.click();
+              }
+            }, 500);
+          }
+        },
       },
       {
         icon: Globe,
@@ -257,13 +284,11 @@ const AboutPage = () => {
           <ProfileImage />
         </div>
 
-        <a href="#Portofolio">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
-            {statsData.map((stat) => (
-              <StatCard key={stat.label} {...stat} />
-            ))}
-          </div>
-        </a>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+          {statsData.map((stat) => (
+            <StatCard key={stat.label} {...stat} />
+          ))}
+        </div>
       </div>
 
       <style jsx>{`

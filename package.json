@@ -15,6 +15,8 @@
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^1.0.6",
     "@lottiefiles/dotlottie-react": "^0.11.0",
+    "@mui/icons-material": "^7.3.4",
+    "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^7.3.4",
     "@react-spring/web": "^9.7.5",
     "@shadcn/ui": "^0.0.4",
